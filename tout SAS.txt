@@ -1,0 +1,646 @@
+
+
+
+
+
+
+
+
+
+
+
+%NLINMix(Data= newdata, 
+   Response= poidsheb, 
+   Subject=animal, 
+   Model=%Str( 
+      expr1=exp(-k*(age-t0)/400); 
+      expr2=1-expr1; 
+      Pred = (A+b1)*(expr2); 
+   ), 
+   Derivs=%Str( 
+      D_A  = expr2; 
+      D_k  = (A+b1)*(Time-t0)/400*expr1; 
+      D_t0 = -(A+b1)*k/400*expr1; 
+      D_b1 = D_A; 
+   ), 
+   Parms=%str( 
+      A =1000 
+      k =3  
+      t0=100), 
+   Random=b1, 
+   Expand=EBLUP, 
+   RType=SP(POW)(Time), 
+   RSub=Tree 
+) 
+Run; 
+
+
+
+
+														
+														
+														
+														
+														
+														
+	
+  
+  
+  
+  
+  
+  
+  
+  PROC FREQ DATA = travail; 
+ TABLES sexe/OUT=NEWFREQ NOPRINT; 
+DATA NEWFREQ2;  
+   SET NEWFREQ; 
+   SAMPNUM=(PERCENT * 500)/100;
+   _NSIZE_= ROUND(SAMP,1); 
+   SAMPNUM=ROUND(SAMPNUM,.01); 
+
+   
+   
+   DATA NEWFREQ3; 
+   SET NEWFREQ2; 
+   KEEP sexe _NSIZE_;         
+PROC SORT DATA = NEWFREQ3; 
+   BY GEND; 
+PROC SORT DATA = RAWSUB; 
+  BY GEND; 
+PROC SURVEYSELECT DATA=RAWSUB  
+          OUT=SAMPFL 
+          SAMPSIZE=NEWFREQ3;  
+  STRATA GEND; 
+  ID ID GEND; 
+PROC FREQ DATA = SAMPFL; 
+  TABLES GEND/OUT=SAMPFREQ NOPRINT; 
+PROC PRINT DATA=SAMPFREQ; 
+TITLE ‘SAMPLE FREQUENCIES’; 
+PROC DELETE DATA = NEWFREQ NEWFREQ2 
+    NEWFREQ3 SAMPFL SAMPFREQ ERROR; 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+proc reg data = travail;
+model poidsheb = age  pds_dc/SSE CP AIC SELECTION = CP;
+run;
+
+  
+  
+  
+
+
+
+                        proc import datafile='/modgen/vhtran/data/newdata.dbf'
+                           replace out= newdata dbms=dbf;
+                         run;
+
+
+
+                         proc contents data = newdata; run;
+
+
+
+
+  proc sort data = newdata; run;
+
+
+  DATA newdata1;
+   SET newdata;
+   BY animal; ***Note: Data set already sorted;
+   ***Remove data with only one mesure;
+   IF age = . THEN DO;
+  age = (temps-2)*7+first_age;
+    end;
+    RUN;
+
+
+
+  proc print data = newdata1; run;
+
+
+
+
+
+
+
+
+
+proc nlp data=newdata;
+parms  ka t age; bounds ka>0, A>0, t>0, age>0;
+lsq poidsheb ;
+
+poidsheb = ( 1-exp(-ka*(age-t)));
+run;
+
+
+       proc
+       nlin  best = 10  method = marquardt  data =  newdata;
+       parms  a = 0 to 1 by .1  b = 0 to .1 by .01;
+       model  poidsheb = 1-(1-a)*exp(-b*age);
+       output
+        out = resultmono  p = pred r = resid;
+       proc
+       print
+        data = resultmono;
+       run
+       ;
+       proc sgplot
+        data= resultmono;
+             scatter
+        x=age y=poidsheb;
+       series
+        x=age y=pred/lineattrs=(color=blue pattern=1);
+       run
+       ;
+       quit
+        ;
+
+
+
+
+
+  proc nlin  best=10  method=marquardt data=newdata;
+    parms c=30  to 80 by 10 b=0 to 1 by .1 a=0 to .1 by .01;
+    model poidsheb=c/(1+b*exp(-a*age));
+   output out=reslogistic  p= pred  r=resid parms=c b a;
+  proc print data=reslogistic;
+  run;
+      data forecast;
+     set reslogistic (obs = 1 keep = c b a); */
+      forecast = c/(1+b*exp(-a*37));   run;
+      proc print data = forecast;
+      run;
+
+
+
+
+     To test the Normality of  given data
+                     Proc univariate data=reslogistic  normal;  var resid;
+     run;
+     Title 'Gompertz Model';
+     proc nlin  best= 10  method=marquardt data=newdata;
+       parms c=30  to 50  by 10  b= 0 to .5 by .1  a=0  to .5  by .1;
+       model poidsheb=c*exp(-b*exp(-a*age));
+
+     output out=resgompertz  p=pred r=resid;
+     proc print data= resgompertz ;
+     run;
+
+
+
+    proc sort data = newdata1; by animal;
+
+    run;
+    Title 'Gompertz Model';
+    proc nlin  best= 10  method=marquardt data=newdata1;
+      parms c=0  to 150  by 10  b= 0 to .5 by .01  a=0  to .5  by .01;
+      model poidsheb=c*exp(-b*exp(-a*age)); by animal;
+
+    output out=resgompertz  p=pred student=s r=resid parms= c b a ;
+    proc print data= resgompertz ;
+    run;
+    proc means data=resgompertz uss css mean var ; *-css is corrected sum of squares;    var poidsheb; run;
+
+
+    proc gplot data=resgompertz;
+    symbol1 color=blue h=2 v=dot i=none;
+    symbol2 color=red w=2 line=1 v=none i=join;
+    symbol3 color=black w=2 v=dot i=none;
+    plot (poidsheb pred)*age / overlay;
+    plot s*pred=3; *-plot studentized residuals versus predicted y;
+    plot resid*pred=3; *-plot regular residuals versus predicted y;
+    run;
+
+
+
+         Title 'Gompertz Model weekly'
+    proc nlin  best= 10  method=marquardt data=newdata1;
+      parms c=0  to 150  by 10  b= 0 to .5 by .01  a=0  to .5  by .01;
+      model poidsheb=c*exp(-b*exp(-a*temps)); by animal;
+
+    output out=resgompertz  p=pred student=s r=resid parms= c b a;
+    proc print data= resgompertz ;
+    run;
+    proc means data=resgompertz uss css mean var ; *-css is corrected sum of squares;    var poidsheb; run;
+
+
+    proc gplot data=resgompertz;
+    symbol1 color=blue h=2 v=dot i=none;
+    symbol2 color=red w=2 line=1 v=none i=join;
+    symbol3 color=black w=2 v=dot i=none;
+    plot (poidsheb pred)*age / overlay;
+    plot s*pred=3; *-plot studentized residuals versus predicted y;
+    plot resid*pred=3; *-plot regular residuals versus predicted y;
+    run;
+
+    ods graphics off;
+
+
+
+
+
+   proc print data = resgompertz; run;
+
+      data kk;
+     set resgompertz ( keep = animal c b a age poidsheb ); by animal;
+      poidpre =c*exp(-b*exp(-a*age));
+         run;
+
+
+
+
+
+
+
+ proc print data = kk; run;
+
+
+    title " Correlation";
+    proc corr data=kk;
+     var poidsheb poidpre;
+    run;
+
+
+
+
+
+
+
+   Title 'Higuchi Model';
+     proc nlin  data=newdata method=marquardt;
+       parms c=0  to 50  by 2
+       model poidsheb=c*(sqrt(age)); by animal;
+
+     output out=resgompert  p=pred r=resid;
+     proc print data= resgompert ;
+     run;
+
+
+
+
+                        proc import datafile='/modgen/vhtran/data/newdata.dbf'
+                           replace out= newdata dbms=dbf;
+                         run;
+
+
+
+                         proc contents data = newdata; run;
+
+
+
+                       %NLINMix(Data= newdata,
+                          Response= poidsheb,
+                          Subject=animal,
+                          Model=%Str(
+                             expr1=exp(-k*(age-t0)/400);
+                             expr2=1-expr1;
+                             Pred = (A+b1)*(expr2);
+                          ),
+                          Derivs=%Str(
+                             D_A  = expr2;
+                             D_k  = (A+b1)*(Time-t0)/400*expr1;
+                             D_t0 = -(A+b1)*k/400*expr1;
+                             D_b1 = D_A;
+                          ),
+                          Parms=%str(
+                             A =1000
+                             k =3
+                             t0=100),
+                          Random=b1,
+                          Expand=EBLUP,
+                          RType=SP(POW)(Time),
+                          RSub=Tree
+                       )
+                       Run;
+
+
+
+
+
+proc nlp data=newdata;
+parms  ka t age; bounds ka>0, A>0, t>0, age>0;
+lsq poidsheb ;
+
+poidsheb = ( 1-exp(-ka*(age-t)));
+run;
+
+
+       proc
+       nlin  best = 10  method = marquardt  data =  newdata;
+       parms  a = 0 to 1 by .1  b = 0 to .1 by .01;
+       model  poidsheb = 1-(1-a)*exp(-b*age);
+       output
+        out = resultmono  p = pred r = resid;
+       proc
+       print
+        data = resultmono;
+       run
+       ;
+       proc sgplot
+        data= resultmono;
+             scatter
+        x=age y=poidsheb;
+       series
+        x=age y=pred/lineattrs=(color=blue pattern=1);
+       run
+       ;
+       quit
+        ;
+
+
+
+
+
+  proc nlin  best=10  method=marquardt data=newdata;
+    parms c=30  to 80 by 10 b=0 to 1 by .1 a=0 to .1 by .01;
+    model poidsheb=c/(1+b*exp(-a*age));
+   output out=reslogistic  p= pred  r=resid parms=c b a;
+  proc print data=reslogistic;
+  run;
+      data forecast;
+     set reslogistic (obs = 1 keep = c b a); */
+      forecast = c/(1+b*exp(-a*37));   run;
+      proc print data = forecast;
+      run;
+
+
+
+
+     To test the Normality of  given data
+                     Proc univariate data=reslogistic  normal;  var resid;
+     run;
+     Title 'Gompertz Model';
+     proc nlin  best= 10  method=marquardt data=newdata;
+       parms c=30  to 50  by 10  b= 0 to .5 by .1  a=0  to .5  by .1;
+       model poidsheb=c*exp(-b*exp(-a*age));
+
+     output out=resgompertz  p=pred r=resid;
+     proc print data= resgompertz ;
+     run;
+
+
+
+    proc sort data = newdata; by animal;
+
+    run;
+    Title 'Gompertz Model';
+    proc nlin  best= 10  method=marquardt data=newdata;
+      parms c=0  to 150  by 10  b= 0 to .5 by .01  a=0  to .5  by .01;
+      model poidsheb=c*exp(-b*exp(-a*age)); by animal;
+
+    output out=resgompertz  p=pred student=s r=resid parms= a b c replace;
+    proc print data= resgompertz ;
+    run;
+    proc means data=resgompertz uss css mean var ; *-css is corrected sum of squares;    var poidsheb; run;
+
+
+    proc gplot data=resgompertz;
+    symbol1 color=blue h=2 v=dot i=none;
+    symbol2 color=red w=2 line=1 v=none i=join;
+    symbol3 color=black w=2 v=dot i=none;
+    plot (poidsheb pred)*age / overlay;
+    plot s*pred=3; *-plot studentized residuals versus predicted y;
+    plot resid*pred=3; *-plot regular residuals versus predicted y;
+    run;
+
+
+
+         Title 'Gompertz Model weekly'
+    proc nlin  best= 10  method=marquardt data=newdata;
+      parms c=0  to 150  by 10  b= 0 to .5 by .01  a=0  to .5  by .01;
+      model poidsheb=c*exp(-b*exp(-a*temps)); by animal;
+
+    output out=resgompertz  p=pred student=s r=resid parms= a b c replace;
+    proc print data= resgompertz ;
+    run;
+    proc means data=resgompertz uss css mean var ; *-css is corrected sum of squares;    var poidsheb; run;
+
+
+    proc gplot data=resgompertz;
+    symbol1 color=blue h=2 v=dot i=none;
+    symbol2 color=red w=2 line=1 v=none i=join;
+    symbol3 color=black w=2 v=dot i=none;
+    plot (poidsheb pred)*age / overlay;
+    plot s*pred=3; *-plot studentized residuals versus predicted y;
+    plot resid*pred=3; *-plot regular residuals versus predicted y;
+    run;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           proc mixed data = newdata;
+          class animal lignee loge sexe ;
+          model poidsheb = age age*age pds_dc age*pds_dc /htype = 1 SOLUTION;
+          random intercept / SUB = animal;
+          run;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    proc mixed data = newdata;
+             class animal lignee loge sexe ;
+             model poidsheb = age age*age pds_dc age*pds_dc /htype = 1 SOLUTION;
+             random intercept / SUB = animal solution G Gcorr;
+                  ods output solutionf=fixed solutionr=random;
+             run;
+
+
+   data lines;
+
+         merge random(where=(effect='Intercept') rename=(estimate=rint));
+
+
+
+         if _n_ = 1 then merge
+
+              fixed(where=(effect='Intercept') rename=(estimate=fint))
+
+              fixed(where=(effect='pds_dc'    ) rename=(estimate=fpds_dc))
+                   fixed(where=(effect='age'    ) rename=(estimate=fage))
+                   fixed(where=(effect='age*age'    ) rename=(estimate=fage_age))
+                   fixed(where=(effect='age*pds_dc'    ) rename=(estimate=fage_pds_dc));
+
+         intercept = fint   + rint;
+
+         slope_age     = fage;
+
+         keep animal poidsheb age temps intercept fpds_dc fage_age fage fage_pds_dc;
+
+      run;
+
+      proc print data=lines;
+
+         var animal poidsheb intercept age temps fpds_dc fage_age fage fage_pds_dc;
+      run;
+
+
+
+
+
+
+
+
+
+
+
+
+ %macro pred;
+ proc sort data=newdata
+ data &parmr;
+ set &parmr;
+  
+  
+  
+
+
+
+                        proc import datafile='/modgen/vhtran/data/newdata.dbf'
+                           replace out= newdata dbms=dbf;
+                         run;
+
+
+
+
+  proc sort data = newdata nodupkey;by animal temps;  proc print; run;
+
+
+  DATA newdata1;
+   SET newdata;
+   BY animal; ***Note: Data set already sorted;
+    IF round(poidsheb)  = 9999 then  poidsheb = .;
+   if round(mimicpoids) = 9999 then mimicpoids = .;
+
+
+
+
+   run;
+
+  proc sort data = newdata1; by animal; proc  print ; run;
+
+
+
+
+
+
+     ods pdf;
+
+    Title 'Gompertz Model';
+    proc nlin  best= 10  method=marquardt data=newdata1;
+      parms c=0  to 150  by 10  b= 0 to .5 by .01  a=0  to .5  by .01;
+      model mimicpoids=c*exp(-b*exp(-a*age)); by animal;
+
+    output out=resgompertz  p=pred2 student=s r=resid2 parms= c b a ;
+
+    run;
+   /* proc means data=resgompertz uss css mean var ; *-css is corrected sum of squares;    var poidsheb; run;    */
+
+
+
+
+
+
+   proc print data = resgompertz; run;
+
+      data kk;
+     set resgompertz ( keep = animal c b a age poidsheb mimicpoids); by animal;
+      poidpre2 =c*exp(-b*exp(-a*age));
+         run;
+
+
+
+
+
+
+
+ proc print data = kk(obs = 100) ; run;
+      ods pdf;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            proc import datafile='/modgen/vhtran/data/datapredict.dbf'
+                           replace out= datapredict dbms=dbf;
+                         run;
+
+
+                              data datapredict1;
+                             set datapredict(where = (temps = 18));
+                          run;
+
+
+
+
+                         data _Null_; set datapredict1;
+                           file '/modgen/vhtran/predict/datapredict.dat';
+    put animal identif bande sexe lignee gener loge eleve pds_dc pds_fc age poidsheb mimicpoids poidpre2 Pred pred1 age_dc temps cosoheb mean_conso ADG FCR FCR1 FCR2 FCR3 FCRv;
+  run;
+
+  
+  
+  
+  
+														
