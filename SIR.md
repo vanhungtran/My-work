@@ -76,7 +76,7 @@ legend("right", legend=c("S", "I", "R",expression(R[E])), lty=c(1,1,1, 2),col=c(
 ```
 
 
-![alt text](https://github.com/vanhungtran/modeling-of-infectious/blob/master/SIR.png)
+![alt text](https://github.com/vanhungtran/My-work/blob/master/SIR.png)
 
 
 
