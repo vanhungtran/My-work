@@ -13,3 +13,9 @@
 -Correlation matrix of EBVs across time (10 weeks) with Random regression model and SAD model
 
 ![alt text](https://github.com/vanhungtran/My-work/blob/master/corr1509.png)
+
+
+- BCG vaccination
+\begin{center} <br>
+\includegraphics[width=8in]{solution-exercise.pdf} <br>
+\end{center}
