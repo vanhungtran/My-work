@@ -16,6 +16,4 @@
 
 
 - BCG vaccination
-\begin{center} <br>
-\includegraphics[width=8in]{solution_exercise.pdf} <br>
-\end{center}
+![Alt](solution_exercise.pdf)
