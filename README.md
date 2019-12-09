@@ -23,6 +23,6 @@
 
 
 
+[Search a R package](searchRpackage.md)
 
 
-#include "searchRpackage.md"
