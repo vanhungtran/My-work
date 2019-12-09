@@ -19,3 +19,10 @@
 ![Alt](solution_exercise.pdf)
 
 ![Alt](solution_exercise.pdf){width=100% height=400}
+
+
+
+
+
+
+#include "searchRpackage.md"
