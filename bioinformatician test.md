@@ -1,5 +1,5 @@
 
-# DATA EXPLORING
+# DATA EXPLORATION
 
 
 # Ultra-sharp genetic group portrait of the Dutch
