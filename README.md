@@ -1,8 +1,8 @@
 # Recently works
+- [Python for Artificial Intelligence I](https://github.com/vanhungtran/My-work/blob/master/Artificial%20Intelligence%20PYTHON%201.ipynb)
 - [Search a R package](searchRpackage.md)
 - [Visualizing genomic data](https://github.com/vanhungtran/Visualizing-genomic-data/blob/master/Rbioinfor1.md)
 - [Python for data analysis](https://github.com/vanhungtran/My-work/blob/master/python%20essential%20for%20data%20analysis.ipynb)
-
 
 
 
