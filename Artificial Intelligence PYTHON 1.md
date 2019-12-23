@@ -50,42 +50,6 @@ def visualize_classifier(classifier, X, y):
 ```
 
 
-```python
-import argparse 
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
-from sklearn.metrics import classification_report,confusion_matrix
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import cross_val_score
-
-def build_arg_parser():
-    parser = argparse.ArgumentParser(description='Classify data using \
-            Ensemble Learning techniques')
-    parser.add_argument('--classifier-type', dest='classifier_type', 
-            required=True, choices=['rf', 'erf'], help="Type of classifier \
-                    to use; can be either 'rf' or 'erf'")
-    return parser
-
-if __name__=='__main__':
-    # Parse the input arguments
-    args = build_arg_parser().parse_args()
-    classifier_type = args.classifier_type
-   
-```
-
-    usage: ipykernel_launcher.py [-h] --classifier-type {rf,erf}
-    ipykernel_launcher.py: error: the following arguments are required: --classifier-type
-    
-
-
-    An exception has occurred, use %tb to see the full traceback.
-    
-
-    SystemExit: 2
-    
-
 
 
 ```python
