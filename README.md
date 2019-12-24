@@ -1,4 +1,5 @@
 # Recently works
+- [Python for Artificial Intelligence II](https://github.com/vanhungtran/My-work/blob/master/AI%202.ipynb)
 - [Python for Artificial Intelligence I](https://github.com/vanhungtran/My-work/blob/master/Artificial%20Intelligence%20PYTHON%201.ipynb)
 - [Baysian Hierachical regression](https://github.com/vanhungtran/My-work/blob/master/Bayesian%20Hierachical.ipynb)
 - [Search a R package](searchRpackage.md)
