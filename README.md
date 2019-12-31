@@ -1,5 +1,5 @@
 # Recently works
-
+- [Text data analysis with Python II](https://github.com/vanhungtran/My-work/blob/master/Text%20analysis%20with%20Python%20II.ipynb)
 - [Text data analysis with Python](https://github.com/vanhungtran/My-work/blob/master/Text%20analysis%20with%20Python.ipynb)
 - [Python for Stats](https://github.com/vanhungtran/My-work/blob/master/Simple%20stat%20with%20Python.ipynb)
 - [Python for Artificial Intelligence II](https://github.com/vanhungtran/My-work/blob/master/AI%202.ipynb)
