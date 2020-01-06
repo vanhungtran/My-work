@@ -1,4 +1,5 @@
 # Recently works
+- [R for geographical epidemiology](https://github.com/vanhungtran/geo_epidemiology)
 - [R for modeling infectious disease](https://github.com/vanhungtran/My-work/blob/master/Model_infection.md)
 - [Text data analysis with Python II](https://github.com/vanhungtran/My-work/blob/master/Text%20analysis%20with%20Python%20II.ipynb)
 - [Text data analysis with Python](https://github.com/vanhungtran/My-work/blob/master/Text%20analysis%20with%20Python.ipynb)
