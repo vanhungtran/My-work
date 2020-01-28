@@ -10,8 +10,7 @@
 - [Search a R package](searchRpackage.md)
 - [Visualizing genomic data](https://github.com/vanhungtran/Visualizing-genomic-data/blob/master/Rbioinfor1.md)
 - [Python for data analysis](https://github.com/vanhungtran/My-work/blob/master/python%20essential%20for%20data%20analysis.ipynb)
-
-
+- [BCG vaccination - data analysis](https://github.com/vanhungtran/My-work/blob/master/solution_exercise.pdf)
 
 
 
@@ -34,13 +33,10 @@
 ![alt text](https://github.com/vanhungtran/My-work/blob/master/corr1509.png)
 
 
-- BCG vaccination
-![Alt](solution_exercise.pdf)
-
-![Alt](solution_exercise.pdf){width=100% height=400}
 
 
-
+# Loisirs
+![alt text](https://github.com/vanhungtran/My-work/blob/master/gganim.gif)
 
 
 
