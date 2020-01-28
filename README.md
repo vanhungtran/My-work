@@ -36,8 +36,9 @@
 
 
 # Loisirs
-![alt text](https://github.com/vanhungtran/My-work/blob/master/gganim.gif)
+- [R for animated bar charts](https://towardsdatascience.com/create-animated-bar-charts-using-r-31d09e5841da)
 
+![alt text](https://github.com/vanhungtran/My-work/blob/master/gganim.gif)
 
 
 
