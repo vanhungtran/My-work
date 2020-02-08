@@ -1,4 +1,5 @@
 # Recently works
+- [Modeling nCoronavirus confired case](https://github.com/vanhungtran/nCorona2019?fbclid=IwAR3q0jrroA4Q_z7u2MBfvSNuxR6t72LyJkrjt_wC9iI3EB4NN5dIBBbpiko)
 - [R for geographical epidemiology](https://github.com/vanhungtran/geo_epidemiology)
 - [R for modeling infectious disease](https://github.com/vanhungtran/My-work/blob/master/Model_infection.md)
 - [Text data analysis with Python II](https://github.com/vanhungtran/My-work/blob/master/Text%20analysis%20with%20Python%20II.ipynb)
@@ -40,7 +41,9 @@
 <![alt text](https://github.com/vanhungtran/My-work/blob/master/gganim.gif)> 
 
 -->
+- nCoronavirus confirmed cases
 
+<![alt text](https://github.com/vanhungtran/nCorona2019/blob/master/Best%20models%20for%20nCon2019.gif)> 
 
 
 
