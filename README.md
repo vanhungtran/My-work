@@ -1,5 +1,8 @@
 # Recently works
 
+
+
+- [Evaluating genomic prediction - RFI corrected phenotypes](https://github.com/vanhungtran/BLUP/blob/master/RFI.ipynb)
 - [ML for predicting new heart disease cases](https://github.com/vanhungtran/My-work/blob/master/heart.ipynb)
 - [ML for ECG](https://github.com/vanhungtran/My-work/blob/master/ECG.ipynb)
 - [Modeling Novel Coronavirus confirmed case](https://github.com/vanhungtran/nCorona2019?fbclid=IwAR3q0jrroA4Q_z7u2MBfvSNuxR6t72LyJkrjt_wC9iI3EB4NN5dIBBbpiko)
