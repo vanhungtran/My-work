@@ -1,7 +1,7 @@
 # Recently works
 
 
-
+- [Deep learning for analyzing X-ray chest](https://github.com/vanhungtran/My-work/blob/master/Pneumonia.ipynb)
 - [Evaluating genomic prediction - RFI corrected phenotypes](https://github.com/vanhungtran/BLUP/blob/master/RFI.ipynb)
 - [ML for predicting new heart disease cases](https://github.com/vanhungtran/My-work/blob/master/heart.ipynb)
 - [ML for ECG](https://github.com/vanhungtran/My-work/blob/master/ECG.ipynb)
