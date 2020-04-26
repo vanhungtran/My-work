@@ -23,6 +23,14 @@
 
 
 
+# R books
+- [Engineering-shiny](https://engineering-shiny.org/matters.html)
+
+
+
+
+
+
 
 
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
