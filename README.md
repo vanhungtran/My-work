@@ -25,6 +25,7 @@
 
 # R books
 - [Engineering-shiny](https://engineering-shiny.org/matters.html)
+- [Network visualization](https://kateto.net/network-visualization)
 
 
 
