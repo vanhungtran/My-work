@@ -27,6 +27,7 @@
 - [Engineering-shiny](https://engineering-shiny.org/matters.html)
 - [Network visualization](https://kateto.net/network-visualization)
 - [Mastering Spark with R](https://therinspark.com/index.html)
+- [Spartial data with R](https://cengel.github.io/R-spatial/mapping.html)
 
 
 
