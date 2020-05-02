@@ -32,7 +32,8 @@
 - [ML Refined Foundations](https://github.com/jermwatt/machine_learning_refined)
 
 
-
+# Blogs
+- [Revolution](https://blog.revolutionanalytics.com/)
 
 
 
