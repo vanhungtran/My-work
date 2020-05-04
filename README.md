@@ -30,6 +30,8 @@
 - [Spartial data with R](https://cengel.github.io/R-spatial/mapping.html)
 - [Mastering Shiny](https://mastering-shiny.org/)
 - [ML Refined Foundations](https://github.com/jermwatt/machine_learning_refined)
+- [R for data science Exercise](https://jrnold.github.io/r4ds-exercise-solutions/data-visualisation.html#position-adjustments)
+- [R for data science](https://r4ds.had.co.nz/)
 
 
 # Blogs
