@@ -32,6 +32,7 @@
 - [ML Refined Foundations](https://github.com/jermwatt/machine_learning_refined)
 - [R for data science Exercise](https://jrnold.github.io/r4ds-exercise-solutions/data-visualisation.html#position-adjustments)
 - [R for data science](https://r4ds.had.co.nz/)
+- [Tidy time series forecasting with fable](https://tidyverts.github.io/tidy-forecasting-principles/)
 
 
 # Blogs
