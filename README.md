@@ -36,6 +36,7 @@
 - [Forecasting: Principles and Practice](https://otexts.com/fpp2/)
 - [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)
 - [Computational Genomics with R](https://compgenomr.github.io/book/)
+- [ML with R](https://bradleyboehmke.github.io/HOML/)
 
 # Blogs
 - [Revolution](https://blog.revolutionanalytics.com/)
