@@ -33,7 +33,8 @@
 - [R for data science Exercise](https://jrnold.github.io/r4ds-exercise-solutions/data-visualisation.html#position-adjustments)
 - [R for data science](https://r4ds.had.co.nz/)
 - [Tidy time series forecasting with fable](https://tidyverts.github.io/tidy-forecasting-principles/)
-- [Forecasting: Principles and Practice](https://otexts.com/fpp2/
+- [Forecasting: Principles and Practice](https://otexts.com/fpp2/)
+ -[Hands-On Programming with R](https://rstudio-education.github.io/hopr/)
 
 # Blogs
 - [Revolution](https://blog.revolutionanalytics.com/)
