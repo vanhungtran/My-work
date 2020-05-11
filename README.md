@@ -35,6 +35,7 @@
 - [Tidy time series forecasting with fable](https://tidyverts.github.io/tidy-forecasting-principles/)
 - [Forecasting: Principles and Practice](https://otexts.com/fpp2/)
 - [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)
+- [Computational Genomics with R](https://compgenomr.github.io/book/)
 
 # Blogs
 - [Revolution](https://blog.revolutionanalytics.com/)
