@@ -39,6 +39,7 @@
 - [ML with R](https://bradleyboehmke.github.io/HOML/)
 - [The age of Algorithms](https://1drv.ms/b/s!AiyGWQBbXDVrhKgVRiheLYyXWTt0IQ)
 - [Epidemiology with R](https://1drv.ms/b/s!AiyGWQBbXDVrhKtmWkg4cncqoj5ehw)
+- [Deep learning with R](https://1drv.ms/b/s!AiyGWQBbXDVrhKddG8lhTquZChFEEg)
 
 # Blogs
 - [Revolution](https://blog.revolutionanalytics.com/)
