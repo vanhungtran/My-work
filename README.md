@@ -37,6 +37,7 @@
 - [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)
 - [Computational Genomics with R](https://compgenomr.github.io/book/)
 - [ML with R](https://bradleyboehmke.github.io/HOML/)
+- [The age of Algorithms](https://1drv.ms/b/s!AiyGWQBbXDVrhKgVRiheLYyXWTt0IQ)
 
 # Blogs
 - [Revolution](https://blog.revolutionanalytics.com/)
