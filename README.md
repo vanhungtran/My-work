@@ -45,7 +45,7 @@
 - [Text mining with R](https://www.tidytextmining.com/)
 - [R Succinctly](http://ebooks.syncfusion.com/downloads/R_Succinctly/R_Succinctly.pdf?AWSAccessKeyId=AKIAWH6GYCX35CXR36F6&Expires=1589366869&Signature=vVTbV%2FlmQ60sM4jJhS9ccd%2Fpk0Y%3D)
 - [Creating website with R Markdown](https://bookdown.org/yihui/blogdown/)
-- [Advanced R] (https://adv-r.hadley.nz/)
+- [Advanced R](https://adv-r.hadley.nz/)
 
 
 # Blogs
