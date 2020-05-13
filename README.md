@@ -46,7 +46,8 @@
 - [R Succinctly](http://ebooks.syncfusion.com/downloads/R_Succinctly/R_Succinctly.pdf?AWSAccessKeyId=AKIAWH6GYCX35CXR36F6&Expires=1589366869&Signature=vVTbV%2FlmQ60sM4jJhS9ccd%2Fpk0Y%3D)
 - [Creating website with R Markdown](https://bookdown.org/yihui/blogdown/)
 - [Advanced R](https://adv-r.hadley.nz/)
-- [Predictive modeling with R](https://bookdown.org/egarpor/PM-UC3M/)
+- [Notes for Predictive modeling with R](https://bookdown.org/egarpor/PM-UC3M/)
+- [Notes for Nonparametric Statistics with R](https://bookdown.org/egarpor/NP-UC3M/)
 
 
 # Blogs
