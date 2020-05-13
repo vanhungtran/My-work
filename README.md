@@ -45,6 +45,7 @@
 - [The Caret package](http://topepo.github.io/caret/index.html)
 - [Text mining with R](https://www.tidytextmining.com/)
 - [R Succinctly](http://ebooks.syncfusion.com/downloads/R_Succinctly/R_Succinctly.pdf?AWSAccessKeyId=AKIAWH6GYCX35CXR36F6&Expires=1589366869&Signature=vVTbV%2FlmQ60sM4jJhS9ccd%2Fpk0Y%3D)
+- [Creating website with R Markdown](https://bookdown.org/yihui/blogdown/)
 
 # Blogs
 - [Revolution](https://blog.revolutionanalytics.com/)
