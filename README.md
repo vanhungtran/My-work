@@ -48,6 +48,7 @@
 - [Advanced R](https://adv-r.hadley.nz/)
 - [Notes for Predictive modeling with R](https://bookdown.org/egarpor/PM-UC3M/)
 - [Notes for Nonparametric Statistics with R](https://bookdown.org/egarpor/NP-UC3M/)
+- [Statistical rethinking with R](https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/)
 
 
 # Blogs
