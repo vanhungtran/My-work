@@ -50,7 +50,7 @@
 - [Notes for Nonparametric Statistics with R](https://bookdown.org/egarpor/NP-UC3M/)
 - [Statistical rethinking with R](https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/)
 - [GIS and spatial data analysis with R](https://mgimond.github.io/Spatial/index.html)
-- [Analyzing sequencage with R](https://www.bioconductor.org/packages/release/workflows/vignettes/sequencing/inst/doc/sequencing.html)
+- [Analyzing sequencage with R](http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html)
 
 
 # Blogs
