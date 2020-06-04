@@ -51,6 +51,7 @@
 - [Statistical rethinking with R](https://bookdown.org/ajkurz/Statistical_Rethinking_recoded/)
 - [GIS and spatial data analysis with R](https://mgimond.github.io/Spatial/index.html)
 - [Analyzing sequencage with R](http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html)
+- [Essential data analysis with R](https://rkabacoff.github.io/datavis/Models.html)
 
 
 # Blogs
