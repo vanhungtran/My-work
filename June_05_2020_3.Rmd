@@ -1,3 +1,4 @@
+
 ---
 title: "miARN data exploring"
 author:
@@ -30,6 +31,7 @@ htmltools::img(src = knitr::image_uri("C:/Users/lucastran/Documents/codeR/logo_f
 
 ```
 
+
 # Data
 
 Data used in this analyis are stocked at the following path: 
@@ -57,9 +59,51 @@ knitr::include_graphics("C:/Users/lucastran/Documents/codeR/sequence1.png")
 
 
 
+```{r}
+
+path_data <- "//192.168.1.20/20. Endo Data/Sequencing/Sequencing Data/Project98/Fastq files/"
+
+out_data_control  <- paste0("C:/Users/lucastran/Documents/","data_quality_control-",Sys.Date())
+dir.create(out_data_control)
+
+setwd(out_data_control)
+
+lists <- list.files(path_data)
+
+full_file <- paste0(path_data, lists)
+
+
+
+library(Rqc)
+library(BiocStyle)
+pacman::p_load(progress)
+
+pb <- progress_bar$new(
+  format = "  downloading [:bar] :percent in :elapsed",
+  total = 100, clear = FALSE, width= 60)
+
+for (i in full_file) {
+  qa <- rqcQA(i, workers=1)
+  print(i)
+  reportFile <- rqcReport(qa, outdir = out_data_control, file = substr(i,79,103))
+  rm(qa)
+  pb$tick()
+}
+
+
+
+```
+
+
+
 
 # Session info {.unnumbered}
 
 ```{r sessionInfo, echo=FALSE}
 sessionInfo()
 ```
+
+
+
+
+
