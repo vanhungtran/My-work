@@ -1,0 +1,65 @@
+---
+title: "miARN data exploring"
+author:
+- name: Lucas TRAN
+  affiliation: Endodiag, FRANCE
+  email: lucas.tran@endodiag.com
+#package: packageName
+output:
+  BiocStyle::html_document:
+    toc_float: true
+    code_folding: show
+  BiocStyle::pdf_document: default
+
+abstract: |
+  Description ofwork ....
+vignette: |
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+```{r, echo=FALSE}
+htmltools::img(src = knitr::image_uri("C:/Users/lucastran/Documents/codeR/logo_full.svg"), 
+               alt = 'logo', 
+               style = 'position:exact; top:10px; right:1%; padding:10px;z-index:200;')
+
+
+
+```
+
+# Data
+
+Data used in this analyis are stocked at the following path: 
+
+
+
+#  Sequencing work flows
+
+1. Experimental step
+- Sample withdraw + pre-treatment
+- Wet-lab sequencing 
+
+
+
+
+
+```{r pressure, echo=FALSE, fig.cap="A caption", out.width = '100%'}
+knitr::include_graphics("C:/Users/lucastran/Documents/codeR/sequence1.png")
+```
+
+# Sequence data representations
+
+
+
+
+
+
+
+# Session info {.unnumbered}
+
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```
