@@ -1,0 +1,11 @@
+How to converst a character matrix into numeric matrix 
+
+- apply(extra4, 2, as.numeric)
+- sapply(extra4, as.numeric)
+- class(extra4) <- "numeric"
+  storage.mode(extra4) <- "numeric"
+  
+  or suppressWarnings(storage.mode(m) <- "numeric")
+  
+  
+  data.matrix(m, rownames.force = NA)
