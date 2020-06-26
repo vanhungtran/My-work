@@ -53,6 +53,7 @@
 - [Analyzing sequencage with R](http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html)
 - [Essential data analysis with R](https://rkabacoff.github.io/datavis/Models.html)
 - [Meta analysis with R](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/dmetar.html)
+- [Efficient programming with R](https://csgillespie.github.io/efficientR/)
 
 
 # Blogs
