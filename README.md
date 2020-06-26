@@ -65,6 +65,7 @@
 - [R -ggplot2 - Devide legend into 2 cols ](https://stackoverflow.com/questions/27803710/ggplot2-divide-legend-into-two-columns-each-with-its-own-title)
 - [R -Bar plots](http://applied-r.com/ggplot-bar-graphs/)
 - [RNAseq DE analysis with R](http://monashbioinformaticsplatform.github.io/RNAseq-DE-analysis-with-R/RNAseq_DE_analysis_with_R.html)
+- [RNAseq DE analysis with R_2](https://gist.github.com/jdblischak/fdb1745612927252a7633751e5e60bcb)
 
 
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
