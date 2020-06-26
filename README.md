@@ -66,6 +66,7 @@
 - [R -Bar plots](http://applied-r.com/ggplot-bar-graphs/)
 - [RNAseq DE analysis with R](http://monashbioinformaticsplatform.github.io/RNAseq-DE-analysis-with-R/RNAseq_DE_analysis_with_R.html)
 - [RNAseq DE analysis with R_2](https://gist.github.com/jdblischak/fdb1745612927252a7633751e5e60bcb)
+- [RNAseq DE analysis with R_3](https://bioconnector.github.io/workshops/r-rnaseq-airway.html)
 
 
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
