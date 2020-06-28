@@ -70,6 +70,7 @@
 - [RNAseq DE analysis with R_3](https://bioconnector.github.io/workshops/r-rnaseq-airway.html)
 - [RNAseq DE analysis with R_4](http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html)
 - [RNAseq single-cell analysis with R_4](https://osca.bioconductor.org/)
+- [RNAseq single-cell analysis with R_5](http://www.nathalievialaneix.eu/doc/html/TP1_normalization.html)
 
 
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
