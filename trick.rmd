@@ -21,3 +21,25 @@ if(interactive()) {
 as.matrix(rev(sort(z))[1:10])
 } else # (more constant over time):
     names(rev(sort(z))[1:10])
+
+
+
+
+## remove the high correlated rows in RNA-seq read count matrix
+
+remove_high_corr <- function(df, cutoff = 0.999) {
+  df1 <- t(dplyr::select_if(df, is.numeric))
+  colnames(df1) <- df$miRNA
+  corr = cor(df1)
+
+  removed_col = caret::findCorrelation(corr, cutoff = cutoff, verbose = FALSE)
+  removed_col = sort(removed_col)
+  df2 <- df1[, -c(removed_col)]
+  return(df2)
+}
+
+df3 = remove_high_corr(data_snoRNA_e, cutoff = 0.95)
+
+
+
+
