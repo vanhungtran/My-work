@@ -72,6 +72,7 @@
 - [RNAseq single-cell analysis with R_4](https://osca.bioconductor.org/)
 - [RNAseq single-cell analysis with R_5](http://www.nathalievialaneix.eu/doc/html/TP1_normalization.html)
 - [RNAseq single-cell analysis with R_6](https://www.bioconductor.org/packages/release/bioc/vignettes/debrowser/inst/doc/DEBrowser.html)
+- [UMAP](https://pair-code.github.io/understanding-umap/)
 
 
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
