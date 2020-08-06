@@ -74,6 +74,7 @@
 - [RNAseq single-cell analysis with R_6](https://www.bioconductor.org/packages/release/bioc/vignettes/debrowser/inst/doc/DEBrowser.html)
 - [UMAP](https://pair-code.github.io/understanding-umap/)
 - [scikit Exp1](https://towardsdatascience.com/model-design-and-selection-with-scikit-learn-18a29041d02a)
+- [fruchterman reingold plot](https://www.biostars.org/p/285296/)
 
 
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
