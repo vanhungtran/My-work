@@ -75,6 +75,7 @@
 - [UMAP](https://pair-code.github.io/understanding-umap/)
 - [scikit Exp1](https://towardsdatascience.com/model-design-and-selection-with-scikit-learn-18a29041d02a)
 - [fruchterman reingold plot](https://www.biostars.org/p/285296/)
+- [ClusterProfiler KEGG](https://yulab-smu.github.io/clusterProfiler-book/chapter3.html#input-data)
 
 
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
