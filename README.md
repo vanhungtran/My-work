@@ -54,6 +54,7 @@
 - [Essential data analysis with R](https://rkabacoff.github.io/datavis/Models.html)
 - [Meta analysis with R](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/dmetar.html)
 - [Efficient programming with R](https://csgillespie.github.io/efficientR/)
+- [Introduction to Data Science with R](https://rafalab.github.io/dsbook/index.html)
 
 
 # Blogs
