@@ -56,6 +56,7 @@
 - [Efficient programming with R](https://csgillespie.github.io/efficientR/)
 - [Introduction to Data Science with R](https://rafalab.github.io/dsbook/index.html)
 - [Bayesian Data Analysis R](http://avehtari.github.io/BDA_R_demos/)
+- [Modern statistics for biology](https://web.stanford.edu/class/bios221/book/)
 
 
 # Blogs
