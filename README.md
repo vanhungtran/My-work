@@ -81,6 +81,7 @@
 - [ClusterProfiler KEGG](https://yulab-smu.github.io/clusterProfiler-book/chapter3.html#input-data)
 - [Data Science Project](https://github.com/achuthasubhash/Complete-Life-Cycle-of-a-Data-Science-Project/)
 - [RadaJSchart](https://github.com/MangoTheCat/radarchart)
+- [Python for data science](https://jakevdp.github.io/PythonDataScienceHandbook/05.03-hyperparameters-and-model-validation.html)
 
 
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
