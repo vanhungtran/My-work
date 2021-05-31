@@ -63,6 +63,7 @@
 - [Revolution](https://blog.revolutionanalytics.com/)
 - [R graphics: Rbokeh](https://hafen.github.io/rbokeh/articles/rbokeh.html)
 - [Papers with code](https://paperswithcode.com/)
+- [AI Advanced courses](https://www.reddit.com/r/MachineLearning/comments/fdw0ax/d_advanced_courses_update/)
 
 # Tips
 
