@@ -65,6 +65,7 @@
 - [Papers with code](https://paperswithcode.com/)
 - [AI Advanced courses](https://www.reddit.com/r/MachineLearning/comments/fdw0ax/d_advanced_courses_update/)
 - [CS224w courses](https://web.stanford.edu/class/cs224w/?fbclid=IwAR3YR2II7VBo41QGpawU701DtsUgnt0uisaJdS2xbtBnPrhAuzhzGvSqbNw)
+- [Notes](http://users.stat.umn.edu/~helwig/notes/)
 
 # Tips
 
