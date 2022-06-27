@@ -88,6 +88,7 @@
 - [Python for data science](https://jakevdp.github.io/PythonDataScienceHandbook/05.03-hyperparameters-and-model-validation.html)
 - [Miscelleneous](https://rstudio4edu.github.io/rstudio4edu-book/doc-yours.html)
 - [SHINY](https://github.com/mkearney/shinyapps_links)
+- [DifferentialExpression](https://genviz.org/module-04-expression/0004/02/01/DifferentialExpression/)
 
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
 
