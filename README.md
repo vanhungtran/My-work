@@ -57,6 +57,7 @@
 - [Introduction to Data Science with R](https://rafalab.github.io/dsbook/index.html)
 - [Bayesian Data Analysis R](http://avehtari.github.io/BDA_R_demos/)
 - [Modern statistics for biology](https://web.stanford.edu/class/bios221/book/)
+- [Landscape Genetic Data Analysis with R](https://bookdown.org/hhwagner1/LandGenCourse_book/)
 
 
 # Blogs
