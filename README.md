@@ -90,7 +90,7 @@
 - [Miscelleneous](https://rstudio4edu.github.io/rstudio4edu-book/doc-yours.html)
 - [SHINY](https://github.com/mkearney/shinyapps_links)
 - [DifferentialExpression](https://genviz.org/module-04-expression/0004/02/01/DifferentialExpression/)
-- R package ggstatsplot (https://indrajeetpatil.github.io/ggstatsplot/articles/web_only/ggcoefstats.html)
+- [R package ggstatsplot](https://indrajeetpatil.github.io/ggstatsplot/articles/web_only/ggcoefstats.html)
 
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
 
