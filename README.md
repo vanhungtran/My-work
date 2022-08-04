@@ -43,7 +43,7 @@
 - [Computer Age Statistical Inference](https://1drv.ms/b/s!AiyGWQBbXDVrhK4HIlBR84xCslF_bw)
 - [The Caret package](http://topepo.github.io/caret/index.html)
 - [Text mining with R](https://www.tidytextmining.com/)
-- [R Succinctly](http://ebooks.syncfusion.com/downloads/R_Succinctly/R_Succinctly.pdf?AWSAccessKeyId=AKIAWH6GYCX35CXR36F6&Expires=1589366869&Signature=vVTbV%2FlmQ60sM4jJhS9ccd%2Fpk0Y%3D)
+- [R Succinctly](http://ebooks.syncfusion.com/downloads/R_Succinctly/R_Succinctly.pdf)
 - [Creating website with R Markdown](https://bookdown.org/yihui/blogdown/)
 - [Advanced R](https://adv-r.hadley.nz/)
 - [Notes for Predictive modeling with R](https://bookdown.org/egarpor/PM-UC3M/)
@@ -59,7 +59,7 @@
 - [Modern statistics for biology](https://web.stanford.edu/class/bios221/book/)
 - [Landscape Genetic Data Analysis with R](https://bookdown.org/hhwagner1/LandGenCourse_book/)
 - [Flex regression](https://discdown.org/flexregression/linreg.html)
-
+- [Data Science for Biological, Medical and Health Research: Notes for 432](https://thomaselove.github.io/432-notes/index.html)
 
 # Blogs
 - [Revolution](https://blog.revolutionanalytics.com/)
