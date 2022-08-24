@@ -482,6 +482,6 @@ corrplot2 <- function (corr, method = c("circle", "square", "ellipse", "number",
 
 
 # install a package from Github
-install_from_github <- function(pkg')
-{pacman::p_load(strsplit(packageDescription('bigstep')[grepl('github', packageDescription('bigstep'))]$URL,".com/")[[1]][2])}
+install_from_github <- function(pkg)
+{pacman::p_load(strsplit(packageDescription(pkg)[grepl('github', packageDescription(pkg))]$URL,".com/")[[1]][2])}
 
