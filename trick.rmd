@@ -485,3 +485,22 @@ corrplot2 <- function (corr, method = c("circle", "square", "ellipse", "number",
 install_from_github <- function(pkg)
 {pacman::p_load(strsplit(packageDescription(pkg)[grepl('github', packageDescription(pkg))]$URL,".com/")[[1]][2])}
 
+
+#  make.data<-function(filename, chunksize,...){       
+     conn<-NULL
+     function(reset=FALSE){
+     if(reset){
+       if(!is.null(conn)) close(conn)
+       conn<<-file(filename,open="r")
+     } else{
+       rval<-read.table(conn, nrows=chunksize,...)
+       if ((nrow(rval)==0)) {
+            close(conn)
+            conn<<-NULL
+            rval<-NULL
+       }
+       return(rval)
+     }
+  }
+}
+
