@@ -504,3 +504,13 @@ install_from_github <- function(pkg)
   }
 }
 
+# Cox univariate 
+univ_formulas <- sapply(explanatory,
+                              function(x) as.formula(paste('Surv(Time, y0)~', x)))
+      univ_models <- lapply( univ_formulas, function(x){coxph(x, data = DF_s)})
+      # Extract data 
+      res1 <- as.data.frame(do.call(rbind, lapply(univ_models,tidy)))
+      rownames(res1) <-res1$term
+      res1$term <- NULL
+      colnames(res1) <- c('Estimate', colnames(res1)[-1])
+      
