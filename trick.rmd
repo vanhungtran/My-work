@@ -513,4 +513,16 @@ univ_formulas <- sapply(explanatory,
       rownames(res1) <-res1$term
       res1$term <- NULL
       colnames(res1) <- c('Estimate', colnames(res1)[-1])
-      
+
+
+# clone git
+In RSTudio, click on Tools > Global Options > Git/SVN > Create RSA key > Createcopy the generated key
+
+then go on gitLab
+click on your profile logo on topright of the screen
+Edit Profile > SSH Keys, paste your key and save it
+
+now go to RStudio, click on projects (topright), New Project > Version Control > Git > 
+paste this URL: ssh://git@..../.git
+
+    
