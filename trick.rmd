@@ -525,4 +525,6 @@ Edit Profile > SSH Keys, paste your key and save it
 now go to RStudio, click on projects (topright), New Project > Version Control > Git > 
 paste this URL: ssh://git@..../.git
 
-    
+ 
+## list of Shiny tools
+UK-BD2K(https://github.com/uc-bd2k)
