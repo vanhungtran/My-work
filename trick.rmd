@@ -528,3 +528,21 @@ paste this URL: ssh://git@..../.git
  
 ## list of Shiny tools
 UK-BD2K(https://github.com/uc-bd2k)
+
+
+# python
+replace duplicate col name
+
+class renamer():
+             def __init__(self):
+                  self.d = dict()
+
+              def __call__(self, x):
+                  if x not in self.d:
+                      self.d[x] = 0
+                      return x
+                  else:
+                      self.d[x] += 1
+                      return "%s_%d" % (x, self.d[x])
+
+          df.rename(columns=renamer())
