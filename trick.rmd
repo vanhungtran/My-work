@@ -546,3 +546,11 @@ class renamer():
                       return "%s_%d" % (x, self.d[x])
 
           df.rename(columns=renamer())
+          
+          
+          
+git init
+git remote add origin https://github.com/CK-CARE//2021-A35_UCB.git
+git branch -M master 
+git fetch --all
+git reset --hard origin/master
