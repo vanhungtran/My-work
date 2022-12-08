@@ -561,3 +561,20 @@ def replace_substr_colnames(df,rename_list):
     for w, i in rename_list.items():   
         df.columns =  df.columns.map(lambda col: col.replace(w,i))
     return(df)
+    
+    
+ def change_format(DF, key_col, id):
+    from functools import reduce  
+    listdf = []
+    for k in key_col:
+        df = DF.filter(regex = k +'|aid')
+        df = df.melt(id_vars=  id, value_vars = list(DF.filter(regex = k).columns)).sort_values(id)
+        df['visit'] = df['variable'].str[:2].str.upper()
+        del df["variable"]
+        #df.rename(columns = {"value" : f"value_{k}"}, inplace=True)
+        df.rename(columns = {"value" : k}, inplace=True)
+        df.sort_values([id,"visit"], inplace = True)
+        df.drop_duplicates(subset=[id,"visit"],inplace=True)
+        listdf.append(df)
+        df = []  
+    return(reduce(lambda df1,df2: pd.merge(df1,df2,on=['aid',"visit"], how='outer'), listdf))
