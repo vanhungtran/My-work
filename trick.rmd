@@ -554,3 +554,10 @@ git remote add origin https://github.com/CK-CARE//2021-A35_UCB.git
 git branch -M master 
 git fetch --all
 git reset --hard origin/master
+
+
+
+def replace_substr_colnames(df,rename_list):
+    for w, i in rename_list.items():   
+        df.columns =  df.columns.map(lambda col: col.replace(w,i))
+    return(df)
