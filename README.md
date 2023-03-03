@@ -93,6 +93,7 @@
 - [DifferentialExpression](https://genviz.org/module-04-expression/0004/02/01/DifferentialExpression/)
 - [R package ggstatsplot](https://indrajeetpatil.github.io/ggstatsplot/articles/web_only/ggcoefstats.html)
 - [Building an Elastic-Net Cox Model with Time-Dependent covariates](https://www.erikdrysdale.com/td_elnet/)
+- [Managing batch effects](https://evayiwenwang.github.io/Managing_batch_effects/simu.html#simulations)
 
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
 
