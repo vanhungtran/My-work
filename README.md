@@ -94,6 +94,7 @@
 - [R package ggstatsplot](https://indrajeetpatil.github.io/ggstatsplot/articles/web_only/ggcoefstats.html)
 - [Building an Elastic-Net Cox Model with Time-Dependent covariates](https://www.erikdrysdale.com/td_elnet/)
 - [Managing batch effects](https://evayiwenwang.github.io/Managing_batch_effects/simu.html#simulations)
+- [Bioinformatics for Biologists](https://biocorecrg.github.io/CRG_Bioinformatics_for_Biologists/functional_analysis.html)
 
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
 
