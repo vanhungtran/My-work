@@ -96,6 +96,11 @@
 - [Managing batch effects](https://evayiwenwang.github.io/Managing_batch_effects/simu.html#simulations)
 - [Bioinformatics for Biologists](https://biocorecrg.github.io/CRG_Bioinformatics_for_Biologists/functional_analysis.html)
 
+
+# Tools
+-[Maryland] (https://peac.hpc.qmul.ac.uk/)
+
+
 # Feed conversion ratio(FCR) trajectory classification with EBVs obtained from Random regression and SAD model
 
 
