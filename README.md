@@ -97,6 +97,10 @@
 - [Bioinformatics for Biologists](https://biocorecrg.github.io/CRG_Bioinformatics_for_Biologists/functional_analysis.html)
 
 
+# Courses
+- [Bioinformatics with Bioconductor](https://ivanek.github.io/analysisOfGenomicsDataWithR/)
+
+
 # Tools
 - [Maryland](https://peac.hpc.qmul.ac.uk/)
 
