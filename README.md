@@ -96,6 +96,7 @@
 - [Managing batch effects](https://evayiwenwang.github.io/Managing_batch_effects/simu.html#simulations)
 - [Bioinformatics for Biologists](https://biocorecrg.github.io/CRG_Bioinformatics_for_Biologists/functional_analysis.html)
 - [Tutorial of RNA-seq tumor immunity analysis](https://liulab-dfci.github.io/RIMA/)
+- [RNA-seq analysis](https://sbc.shef.ac.uk/workshops/2020-02-13-rnaseq-r/rna-seq-preprocessing.nb.html)
 
 
 # Courses
