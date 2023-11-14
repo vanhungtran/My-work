@@ -97,6 +97,7 @@
 - [Bioinformatics for Biologists](https://biocorecrg.github.io/CRG_Bioinformatics_for_Biologists/functional_analysis.html)
 - [Tutorial of RNA-seq tumor immunity analysis](https://liulab-dfci.github.io/RIMA/)
 - [RNA-seq analysis](https://sbc.shef.ac.uk/workshops/2020-02-13-rnaseq-r/rna-seq-preprocessing.nb.html)
+- [DESeq Workshop 1 - Standard Analyses for RNA-seq Data](https://compbiocore.github.io/deseq-workshop-1/assets/deseq_workshop_1.html)
 
 
 # Courses
