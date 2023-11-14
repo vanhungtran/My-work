@@ -95,6 +95,7 @@
 - [Building an Elastic-Net Cox Model with Time-Dependent covariates](https://www.erikdrysdale.com/td_elnet/)
 - [Managing batch effects](https://evayiwenwang.github.io/Managing_batch_effects/simu.html#simulations)
 - [Bioinformatics for Biologists](https://biocorecrg.github.io/CRG_Bioinformatics_for_Biologists/functional_analysis.html)
+- [Tutorial of RNA-seq tumor immunity analysis](https://liulab-dfci.github.io/RIMA/)
 
 
 # Courses
