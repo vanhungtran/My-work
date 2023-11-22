@@ -101,8 +101,7 @@
 - [RNA-seq analysis](https://sbc.shef.ac.uk/workshops/2020-02-13-rnaseq-r/rna-seq-preprocessing.nb.html)
 - [DESeq Workshop 1 - Standard Analyses for RNA-seq Data](https://compbiocore.github.io/deseq-workshop-1/assets/deseq_workshop_1.html)
 
-
-
+ (from jdidion/biotools)
 
 - [Clinical data](#Clinical-data)
   - [EHR](#EHR)
