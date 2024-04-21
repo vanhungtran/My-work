@@ -62,6 +62,7 @@
 - [Landscape Genetic Data Analysis with R](https://bookdown.org/hhwagner1/LandGenCourse_book/)
 - [Flex regression](https://discdown.org/flexregression/linreg.html)
 - [Data Science for Biological, Medical and Health Research: Notes for 432](https://thomaselove.github.io/432-notes/index.html)
+- [An Introduction to Bayesian Data Analysis for Cognitive Science](https://vasishth.github.io/bayescogsci/book/ch-cogmod.html)
 
 # Blogs
 - [Revolution](https://blog.revolutionanalytics.com/)
