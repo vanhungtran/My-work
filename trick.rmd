@@ -578,3 +578,34 @@ def replace_substr_colnames(df,rename_list):
         listdf.append(df)
         df = []  
     return(reduce(lambda df1,df2: pd.merge(df1,df2,on=['aid',"visit"], how='outer'), listdf))
+
+
+
+
+
+
+txdb = makeTxDbFromGFF("~hg38.ncbiRefSeq.gtf.gz")
+k = keys(txdb, keytype = c('TXNAME'))
+tx2gene = select(txdb, k, "GENEID", "TXNAME")
+
+### list the quant.sf files in the raw-data folder
+files = list.files(dir_quants)
+files = str_sort(files, numeric = TRUE) # lexicographic ordering
+
+### extract the files names
+pattern = '^(.*).quant.sf$'
+file_names = str_match(files, pattern)
+file_names = file_names[, 2]
+
+files = file.path(dir_quants, files)
+names(files) = file_names
+#===============================================================================
+# import transcript-level abundances and counts for transcript- and gene-level analysis
+#===============================================================================
+txi = tximport(files, type = "salmon", tx2gene = tx2gene)
+
+names(txi)
+View(txi$counts) # matrix of raw counts extracted from quant.sf files
+
+
+write.csv(txi$counts, out_path_csv, fileEncoding = "UTF-8")
