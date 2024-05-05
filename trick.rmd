@@ -609,3 +609,14 @@ View(txi$counts) # matrix of raw counts extracted from quant.sf files
 
 
 write.csv(txi$counts, out_path_csv, fileEncoding = "UTF-8")
+
+
+
+## adjacient matrix for social network
+require(reshape2)
+# Build a mock data.table
+dt <- data.table(Source=as.character(rep(letters[1:3],2)),Target=as.character(rep(letters[4:2],2)))
+levs <- unique(unlist(dt, use.names = FALSE))
+table(lapply(dt, factor, levs))
+
+
