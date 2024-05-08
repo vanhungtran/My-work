@@ -619,4 +619,15 @@ dt <- data.table(Source=as.character(rep(letters[1:3],2)),Target=as.character(re
 levs <- unique(unlist(dt, use.names = FALSE))
 table(lapply(dt, factor, levs))
 
-
+## Simulated p_values
+if (simulate.p.value) {
+    setMETH()
+    nx <- length(x)
+    sm <- matrix(sample.int(nx, B * n, TRUE, prob = p), 
+                 nrow = n)
+    ss <- apply(sm, 2L, function(x, E, k) {
+      sum((table(factor(x, levels = 1L:k)) - E)^2/E)
+    }, E = E, k = nx)
+    PARAMETER <- NA
+    PVAL <- (1 + sum(ss >= almost.1 * STATISTIC))/(B + 1)
+}
