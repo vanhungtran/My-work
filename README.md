@@ -2410,6 +2410,8 @@ When looking for a bioinformatics tool for a specific application:
 - Phasing by VAF in tumor-normal samples: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-019-2753-1
 
 
+## Colors 
+![alt text](https://github.com/EmilHvitfeldt/r-color-palettes/tree/main?tab=readme-ov-file)
 
 
 # Courses
