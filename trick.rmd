@@ -743,3 +743,9 @@ my.ggvenn <- function(data, data.plus, columns = NULL,
 }
   
 my.ggvenn(X,Y, show_percentage = F)
+
+
+## Display Viewer Panel in Rstudio
+plotly::plot_ly(x = rnorm(100), y = rnorm(100), mode = "markers", type = "scatter")
+mapview::mapview(mapview::breweries)
+leaflet::leaflet() |> leaflet::addTiles()
