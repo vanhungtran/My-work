@@ -650,3 +650,96 @@ install_StanHeaders <- function(branch = "develop") {
 
   try(system("sh sh_b.sh --no-build-vignettes --no-manual"))
 }
+
+
+
+##################################################################################################################
+## https://stackoverflow.com/questions/76419779/how-to-put-overlay-values-from-2-venn-diagram-in-r
+
+### Anything with a ".plus" is something that I added to the base function
+### data.plus is the "Y" in your example, and data is the usual "X".
+my.ggvenn <- function(data, data.plus, columns = NULL,
+                   show_elements = FALSE,
+                   show_percentage = TRUE,
+                   digits = 1,
+                   fill_color = c("blue", "yellow", "green", "red"),
+                   fill_alpha = .5,
+                   stroke_color = "black",
+                   stroke_alpha = 1,
+                   stroke_size = 1,
+                   stroke_linetype = "solid",
+                   set_name_color = "black",
+                   set_name_size = 6,
+                   text_color = "black",
+###This is the color of the Y numbers underneath
+                   text_color.plus = "blue",
+                   text_size = 4,
+###This is the vertical justification
+                   vjust.plus = 1,
+                   label_sep = ",",
+                   count_column = NULL,
+                   show_outside = c("auto", "none", "always"),
+                   auto_scale = FALSE)
+{
+  show_outside <- match.arg(show_outside)
+
+### we run this function 2 times, one for X (data) and one for Y (data.plus).  
+### The objective is to perform the identical diagrams but adjust the Y one lower with vjust.
+
+  venn <- prepare_venn_data(data, columns, show_elements, show_percentage, digits,
+                            label_sep, count_column, show_outside, auto_scale)
+
+### this was added by me; you can check out what it does but it creates the formatting
+
+  venn.plus <- prepare_venn_data(data.plus, columns, show_elements, show_percentage, digits,
+                            label_sep, count_column, show_outside, auto_scale)
+  
+  g <- venn$shapes %>%
+    mutate(group = LETTERS[group]) %>%
+    ggplot() +
+    geom_polygon(aes(x = x, y = y, group = group, fill = group),
+                 alpha = fill_alpha) +
+    geom_polygon(aes(x = x, y = y, group = group),
+                 fill = NA,
+                 color = stroke_color,
+                 size = stroke_size,
+                 alpha = stroke_alpha,
+                 linetype = stroke_linetype)
+  if (nrow(venn$labels) > 0) {
+    g <- g +
+      geom_text(data = venn$labels,
+                aes(x = x, y = y, label = text, hjust = hjust, vjust = vjust),
+                color = set_name_color,
+                size = set_name_size)
+  }
+  if (nrow(venn$texts) > 0) {
+    g <- g +
+      geom_text(data = venn$texts,
+                aes(x = x, y = y, label = text, hjust = hjust, vjust = vjust),
+                color = text_color,
+                size = text_size)
+  }
+### this adjusts all of the Y values down by vjust + vjust.plus and colors them.
+  if (nrow(venn.plus$texts) > 0) {
+    g <- g +
+      geom_text(data = venn.plus$texts,
+                aes(x = x, y = y, label = text, hjust = hjust, vjust = vjust+vjust.plus),
+                color = text_color.plus,
+                size = text_size)
+  }
+  if (nrow(venn$segs) > 0) {
+    g <- g +
+      geom_segment(data = venn$segs,
+                   aes(x = x, y = y, xend = xend, yend = yend),
+                   color = text_color,
+                   size = 0.5)
+  }
+  g <- g +
+    scale_fill_manual(values = fill_color) +
+    guides(fill = "none") +
+    coord_fixed() +
+    theme_void()
+  return(g)
+}
+  
+my.ggvenn(X,Y, show_percentage = F)
