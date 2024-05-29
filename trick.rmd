@@ -749,3 +749,92 @@ my.ggvenn(X,Y, show_percentage = F)
 plotly::plot_ly(x = rnorm(100), y = rnorm(100), mode = "markers", type = "scatter")
 mapview::mapview(mapview::breweries)
 leaflet::leaflet() |> leaflet::addTiles()
+
+
+
+## Drug-Gene Interaction
+
+
+.res <- RES_TOT0 %>% dplyr::filter(contrast %in% "AD with AD-systemic treatment_vs_HC" & padj < 0.05 & log2FoldChange > log2(1.5))
+gene_list <- .res$gene
+out_df <- rDGIdb::queryDGIdb(gene_list) 
+net_dat <- out_df@detailedResults %>% as.data.frame() %>% dplyr::select(Gene:InteractionType)
+#df_DGI <- out_df@detailedResults %>% as.data.frame() %>% dplyr::select(Gene:InteractionType)
+#p <- dtnetplot( set=gene_list, drugs = out_df@detailedResults$Drug)
+net_dat  <- net_dat  %>%
+  dplyr::mutate(InteractionType = dplyr::case_when(!(InteractionType %in% "")  ~ InteractionType, TRUE ~ "None"))
+net_dat$Count <- rep(table(net_dat$Gene), table(net_dat$Gene))
+
+
+edges <- net_dat %>% left_join(.res, by=c('Gene'='gene')) 
+colnames(edges) <- c("from", "to", "InteractionType", "width", "baseMean", "weight", 
+"lfcSE", "stat", "pvalue", "padj", "weight1", "contrast", "expression"
+)
+
+
+
+ColDF <- data.frame(
+InteractionType = unique(edges$InteractionType), 
+color = rainbow(length(unique(edges$InteractionType))), 
+shape="dot") # "color.highlight.border" variable: set frame color of 
+
+
+edges <- edges %>% left_join(ColDF, by = "InteractionType" )
+
+
+
+nodes <- data.frame(
+id = c(unique(c(net_dat$Gene, net_dat$Drug))),
+label = c(unique(c(net_dat$Gene, net_dat$Drug))), 
+type = c( rep("gene", length(unique(c(net_dat$Gene)))),  rep("drug", length(unique(c(net_dat$Drug))))))
+
+
+
+
+
+
+
+
+
+graph <- graph_from_data_frame(edges, directed = FALSE)
+#Louvain Comunity Detection
+cluster <- cluster_louvain(graph)
+cluster_df <- data.frame(as.list(membership(cluster)))
+cluster_df <- as.data.frame(t(cluster_df))
+cluster_df$label <- rownames(cluster_df)
+#Create group column
+nodes <- left_join(nodes, cluster_df, by = "label")
+colnames(nodes)[3] <- "group"
+
+visNetwork(nodes, edges, width = "5000px", height = "5000px") %>%
+  visIgraphLayout() %>%
+  visNodes(
+    shape = "dot",
+    color = list(
+      background = "#0085AF",
+      border = "#013848",
+      highlight = "#FF8000"
+    ),
+    shadow = list(enabled = TRUE, size = 10)
+  ) %>%
+  visEdges(
+    shadow = FALSE,
+    color = list(color = "#0085AF", highlight = "#C62F4B")
+  ) %>%
+  visOptions(highlightNearest = list(enabled = T, degree = 1, hover = T),
+            
+             nodesIdSelection=TRUE,
+             selectedBy = "group") %>% 
+  visLayout(randomSeed = 11)  %>% 
+  visInteraction(hideEdgesOnDrag=TRUE, # "hideEdgesOnDrag" variable: hide edges when dragging the view
+                 dragNodes=TRUE, # "dragNodes" variable: hide nodes when dragging the view
+                 dragView=TRUE, # "dragView" variable: enable or not the movement of the full network
+                 zoomView=TRUE, # "zoomView" variable: enable or not the zoom (use mouse scroll)
+                 navigationButtons=TRUE) %>% # "navigationButtons" variable: show navigation buttons
+  visLegend() %>%
+  visExport(type = "jpeg", name = "E:/export-network", 
+   float = "left", label = "Save network", background = "white", style= "") 
+
+
+
+
