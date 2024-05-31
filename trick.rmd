@@ -836,5 +836,30 @@ visNetwork(nodes, edges, width = "5000px", height = "5000px") %>%
    float = "left", label = "Save network", background = "white", style= "") 
 
 
+#https://stats.stackexchange.com/questions/551459/given-scores-for-a-classifier-and-an-expected-positive-rate-generate-targets-th?rq=1
+# library(pROC)
+
+sample_auc <- function(prevalence,auc,n){
+  truth <- rbinom(n=n,size=1,prob=prevalence)
+  measure <- rep(NA,n)
+  measure[truth==0] <- rnorm(n=n-sum(truth),mean=0,sd=sqrt(0.5))
+  measure[truth==1] <- rnorm(n=sum(truth),mean=qnorm(p=auc),sd=sqrt(0.5))
+  
+  return(list("auc"=auc(roc(truth,measure)),
+              "prevalence"=sum(truth)/n,
+              "data"=data.frame(truth,measure)))
+}
+nsim=1e7
+samples <- sample_auc(prevalence=0.25, auc=0.66, n=nsim)
+samples$auc # 0.66
+samples$prevalence # 0.25
+
+truth <- samples$data[order(samples$data$measure),]$truth
+your_sorted_measures <- 1:nsim 
+# your_sorted_measures can be any sorted data, the following works too 
+# your_measures <- sort(rgamma(n=nsim, shape=1,scale=1)) 
+auc(roc(truth, your_sorted_measures)) # 0.66
+
+
 
 
